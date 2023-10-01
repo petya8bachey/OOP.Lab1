@@ -12,7 +12,7 @@ public class Firm {
     Date dateIn;//Дата ввода фирмы (начало взаимоотношений)
     String email;//Почтовый адрес фирмы
     String web;//URL-адрес сайта
-    ArrayList<SubFirm> _sbFirms;//Подразделения фирмы
-    Dictionary<String, String> _usrFields;//Пользовательские поля
+    ArrayList<SubFirm> sbFirms;//Подразделения фирмы
+    Dictionary<String, String> usrFields;//Пользовательские поля
 
 }
