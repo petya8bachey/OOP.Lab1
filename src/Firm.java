@@ -15,4 +15,10 @@ public class Firm {
     ArrayList<SubFirm> sbFirms;//Подразделения фирмы
     Dictionary<String, String> usrFields;//Пользовательские поля
 
+    public void addCont() {}
+    public void addContToSubFirm() {}
+    public void addField() {}
+    public void addSubFirm() {}
+
+
 }

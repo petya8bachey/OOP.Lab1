@@ -7,4 +7,9 @@ public class Contact {
     String dataInfo;//Формулировка контакта для клиента
     ContType tpy;//Вид контакта
 
+    public Contact() {    }
+    public Contact clone() {
+        return null;
+    }
+
 }
