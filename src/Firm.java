@@ -19,6 +19,10 @@ public class Firm {
     public void addContToSubFirm() {}
     public void addField() {}
     public void addSubFirm() {}
-
-
+    public void existContact() {}
+    public Firm() {}
+    public String getFields() {return null;}
+    public Object getMain() {return null;}
+    public void renameField() {}
+    public void setField() {}
 }
