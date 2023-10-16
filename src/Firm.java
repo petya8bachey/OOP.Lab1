@@ -14,20 +14,36 @@ public class Firm {
     String web;//URL-адрес сайта
     ArrayList<SubFirm> sbFirms;//Подразделения фирмы
     Dictionary<String, String> usrFields;//Пользовательские поля
-
-    public void addCont() {}
-    public void addContToSubFirm() {}
+    public Firm() {}
+    public void addCont(Contact contact) {
+        getMain().addCont(contact);
+    }
+    public void addContToSubFirm(SubFirm subFirm, Contact contact) {
+        subFirm.addCont(contact);
+    }
     public void addField(String name, String description) {
         usrFields.put(name, description);
     }
     public void addSubFirm(SubFirm subFirm) {
         sbFirms.add(subFirm);
     }
-    public void existContact() {}
-    public Firm() {}
+    public boolean existContact(Contact contact) {
+        for (SubFirm subFirm:sbFirms) {
+            if(subFirm.existContact(contact)) {
+                return true;
+            }
+        }
+        return false;
+    }
     public String getFields(String name) {
         return usrFields.get(name);}
-    public Object getMain() {return null;}
+    public SubFirm getMain() {
+        for (SubFirm subFirm:sbFirms) {
+            if(subFirm.tpy.isMain) {
+                return subFirm;
+            }
+        }
+        return null;}
     public void renameField() {}
     public void setField() {}
 }

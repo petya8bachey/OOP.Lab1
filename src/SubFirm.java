@@ -11,7 +11,14 @@ public class SubFirm {
     public void addCont(Contact contact) {
         conts.add(contact);
     }
-    public void existContact() {}
+    public boolean existContact(Contact contact) {
+        for (Contact cnt:conts) {
+            if(cnt == contact){
+                return true;
+            }
+        }
+        return false;
+    }
     public SubFirmType isYourType() {
         return tpy;
     }
