@@ -3,7 +3,7 @@ public class FirmFactory {
         System.out.println("Hello world!");
     }
     Object fld;
-    Object nameMain;
+    SubFirm nameMain;
     public void create() {};
     public void fldName() {};
 }

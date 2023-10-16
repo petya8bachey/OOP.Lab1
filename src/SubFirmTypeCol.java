@@ -2,28 +2,28 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class SubFirmTypeCol<T> implements Iterable<T> {
-    T[] lst;
-    int current = 0;
+public class SubFirmTypeCol implements Iterable<SubFirmType> {
+    ArrayList<SubFirmType> lst;
+    Iterator<SubFirmType> iter = lst.iterator();
     @Override
-    public Iterator<T> iterator() {
-        return null;
+    public Iterator<SubFirmType> iterator() {
+        return iter;
     }
-    public void add() {}
+    public void add(SubFirmType subFirmType) {
+        lst.add(subFirmType);
+    }
     public void dispose() {}
     public boolean hasNext() {
-        if (current < lst.length) {
-            return true;
-        } else {
-            return false;
-        }
+        return iter.hasNext();
     }
-    public T next() {
+    public SubFirmType next() {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        return lst[current++];
+        return iter.next();
     }
-    public void reset() {}
+    public void reset() {
+        iter = lst.iterator();
+    }
     public SubFirmTypeCol() {}
 }

@@ -9,7 +9,7 @@ public class Contact {
 
     public Contact() {    }
     public Contact clone() {
-        return null;
+        return this;
     }
 
 }

@@ -8,8 +8,12 @@ public class SubFirm {
     String email;//Почтовый адрес подразделения
     SubFirmType tpy;//Тип подразделения
     ArrayList<Contact> conts;//Контакты подразделения
-    public void addCont() {}
+    public void addCont(Contact contact) {
+        conts.add(contact);
+    }
     public void existContact() {}
-    public Object isYourType() {return null;}
+    public SubFirmType isYourType() {
+        return tpy;
+    }
     public SubFirm() {}
 }

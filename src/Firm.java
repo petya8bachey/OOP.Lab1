@@ -3,10 +3,10 @@ import java.util.Date;
 import java.util.Dictionary;
 
 public class Firm {
-    String name; //Наименование фирмы
+    String name;//Наименование фирмы
     String country;//Страна
     String region;//Регион (область)
-    String town;//Город
+    String town;//Городf
     String street;//Улица
     String postInx;//Почтовый индекс
     Date dateIn;//Дата ввода фирмы (начало взаимоотношений)
@@ -17,11 +17,16 @@ public class Firm {
 
     public void addCont() {}
     public void addContToSubFirm() {}
-    public void addField() {}
-    public void addSubFirm() {}
+    public void addField(String name, String description) {
+        usrFields.put(name, description);
+    }
+    public void addSubFirm(SubFirm subFirm) {
+        sbFirms.add(subFirm);
+    }
     public void existContact() {}
     public Firm() {}
-    public String getFields() {return null;}
+    public String getFields(String name) {
+        return usrFields.get(name);}
     public Object getMain() {return null;}
     public void renameField() {}
     public void setField() {}
