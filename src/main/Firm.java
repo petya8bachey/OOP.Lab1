@@ -1,3 +1,5 @@
+package main;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Dictionary;
@@ -6,7 +8,7 @@ public class Firm {
     String name;//Наименование фирмы
     String country;//Страна
     String region;//Регион (область)
-    String town;//Городf
+    String town;//Город
     String street;//Улица
     String postInx;//Почтовый индекс
     Date dateIn;//Дата ввода фирмы (начало взаимоотношений)
@@ -44,6 +46,12 @@ public class Firm {
             }
         }
         return null;}
-    public void renameField() {}
-    public void setField() {}
+    public void renameField(String oldName, String newName) {
+        String value = getFields(oldName);
+        usrFields.remove(oldName);
+        usrFields.put(newName, value);
+    }
+    public void setField(String name, String value) {
+        usrFields.put(name, value);
+    }
 }
