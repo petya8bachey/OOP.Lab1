@@ -3,7 +3,10 @@ package main;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-
+import lombok.Getter;
+import lombok.Setter;
+@Setter
+@Getter
 public class SubFirmTypeCol implements Iterable<SubFirmType> {
     ArrayList<SubFirmType> lst;
     Iterator<SubFirmType> iter = lst.iterator();

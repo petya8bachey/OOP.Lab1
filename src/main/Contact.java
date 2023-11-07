@@ -1,7 +1,11 @@
 package main;
 
-import java.util.Date;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.Date;
+@Setter
+@Getter
 public class Contact {
     Date beginDt;//Дата начала контакта
     Date endDt;//Дата завершения контакта

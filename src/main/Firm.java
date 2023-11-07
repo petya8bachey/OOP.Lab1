@@ -3,8 +3,11 @@ package main;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Dictionary;
-
-public class Firm {
+import lombok.Getter;
+import lombok.Setter;
+@Setter
+@Getter
+public class Firm extends  FirmFactory{
     String name;//Наименование фирмы
     String country;//Страна
     String region;//Регион (область)
@@ -49,9 +52,12 @@ public class Firm {
     public void renameField(String oldName, String newName) {
         String value = getFields(oldName);
         usrFields.remove(oldName);
+        super.flds.remove(newName);
         usrFields.put(newName, value);
+        super.flds.put(newName, value);
     }
     public void setField(String name, String value) {
         usrFields.put(name, value);
+        super.flds.put(name, value);
     }
 }

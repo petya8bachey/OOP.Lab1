@@ -1,5 +1,9 @@
 package main;
 
+import lombok.Getter;
+import lombok.Setter;
+@Setter
+@Getter
 public class ContType {
     String name;
     String note;

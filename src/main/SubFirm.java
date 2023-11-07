@@ -1,7 +1,10 @@
 package main;
 
 import java.util.ArrayList;
-
+import lombok.Getter;
+import lombok.Setter;
+@Setter
+@Getter
 public class SubFirm {
     String name;//Наименование подразделения
     String bossName;//Имя руководителя подразделения
