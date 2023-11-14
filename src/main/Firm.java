@@ -3,6 +3,8 @@ package main;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Dictionary;
+import java.util.HashMap;
+
 import lombok.Getter;
 import lombok.Setter;
 @Setter
@@ -18,8 +20,10 @@ public class Firm extends  FirmFactory{
     String email;//Почтовый адрес фирмы
     String web;//URL-адрес сайта
     ArrayList<SubFirm> sbFirms;//Подразделения фирмы
-    Dictionary<String, String> usrFields;//Пользовательские поля
-    public Firm() {}
+    HashMap<String, String> usrFields;//Пользовательские поля
+    public Firm() {
+        sbFirms = new ArrayList<>();
+    }
     public void addCont(Contact contact) {
         getMain().addCont(contact);
     }

@@ -1,19 +1,20 @@
 package main;
 
-import java.util.Dictionary;
-import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Set;
+
 import lombok.Getter;
 import lombok.Setter;
 @Setter
 @Getter
 public class FirmFactory {
-    Dictionary<String, String> flds;
+    HashMap<String, String> flds = new HashMap<>();
     SubFirm nameMain;
     public static Firm create() {
         return new Firm();
     }
-    public Enumeration<String> fldName(String name) {
-        return flds.keys();
+    public Set<String> fldName(String name) {
+        return flds.keySet();
     }
     public static void main(String[] args) {
         System.out.println("Hello world!");

@@ -6,4 +6,8 @@ import lombok.Setter;
 public class SubFirmType {
     boolean isMain;
     String name;
+    public SubFirmType(Boolean isMain, String name) {
+        this.isMain = isMain;
+        this.name = name;
+    }
 }

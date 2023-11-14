@@ -27,5 +27,7 @@ public class SubFirm {
     public SubFirmType isYourType() {
         return tpy;
     }
-    public SubFirm() {}
+    public SubFirm() {
+        conts = new ArrayList<>();
+    }
 }
