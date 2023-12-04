@@ -22,7 +22,7 @@ public class Firm{
     String email;//Почтовый адрес фирмы
     String web;//URL-адрес сайта
     ArrayList<SubFirm> sbFirms;//Подразделения фирмы
-    HashMap<String, String> usrFields;//Пользовательские поля
+    protected HashMap<String, String> usrFields;//Пользовательские поля
     protected Firm() {
         sbFirms = new ArrayList<>();
     }
@@ -59,8 +59,11 @@ public class Firm{
         String value = getFields(oldName);
         usrFields.remove(oldName);
         usrFields.put(newName, value);
+        FirmFactory.getInstance().flds.remove(oldName);
+        FirmFactory.getInstance().flds.put(newName, value);
     }
     public void setField(String name, String value) {
         usrFields.put(name, value);
+        FirmFactory.getInstance().flds.put(name, value);
     }
 }
