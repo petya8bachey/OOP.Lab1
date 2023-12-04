@@ -1,8 +1,10 @@
-package main;
+package main.subfirm;
 
 import java.util.ArrayList;
 import lombok.Getter;
 import lombok.Setter;
+import main.contact.Contact;
+
 @Setter
 @Getter
 public class SubFirm {

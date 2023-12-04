@@ -1,15 +1,17 @@
-package main;
+package main.firm;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Dictionary;
 import java.util.HashMap;
 
 import lombok.Getter;
 import lombok.Setter;
+import main.contact.Contact;
+import main.subfirm.SubFirm;
+
 @Setter
 @Getter
-public class Firm extends  FirmFactory{
+public class Firm{
     String name;//Наименование фирмы
     String country;//Страна
     String region;//Регион (область)
@@ -21,7 +23,7 @@ public class Firm extends  FirmFactory{
     String web;//URL-адрес сайта
     ArrayList<SubFirm> sbFirms;//Подразделения фирмы
     HashMap<String, String> usrFields;//Пользовательские поля
-    public Firm() {
+    protected Firm() {
         sbFirms = new ArrayList<>();
     }
     public void addCont(Contact contact) {
@@ -48,7 +50,7 @@ public class Firm extends  FirmFactory{
         return usrFields.get(name);}
     public SubFirm getMain() {
         for (SubFirm subFirm:sbFirms) {
-            if(subFirm.tpy.isMain) {
+            if(subFirm.getTpy().isMain()) {
                 return subFirm;
             }
         }
@@ -56,12 +58,9 @@ public class Firm extends  FirmFactory{
     public void renameField(String oldName, String newName) {
         String value = getFields(oldName);
         usrFields.remove(oldName);
-        super.flds.remove(newName);
         usrFields.put(newName, value);
-        super.flds.put(newName, value);
     }
     public void setField(String name, String value) {
         usrFields.put(name, value);
-        super.flds.put(name, value);
     }
 }

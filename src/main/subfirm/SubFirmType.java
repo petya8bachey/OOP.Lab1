@@ -1,4 +1,4 @@
-package main;
+package main.subfirm;
 import lombok.Getter;
 import lombok.Setter;
 @Setter
@@ -9,5 +9,6 @@ public class SubFirmType {
     public SubFirmType(Boolean isMain, String name) {
         this.isMain = isMain;
         this.name = name;
+        SubFirmTypeCol.getInstance().add(this);
     }
 }

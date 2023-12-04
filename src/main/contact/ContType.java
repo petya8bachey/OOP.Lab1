@@ -1,4 +1,4 @@
-package main;
+package main.contact;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,5 +11,6 @@ public class ContType {
     public ContType(String name, String note) {
         this.name = name;
         this.note = note;
+        ContTypeCol.getInstance().add(this);
     }
 }

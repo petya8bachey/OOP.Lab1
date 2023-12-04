@@ -1,4 +1,4 @@
-package main;
+package main.contact;
 
 import lombok.Getter;
 import lombok.Setter;

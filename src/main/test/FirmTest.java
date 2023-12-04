@@ -1,5 +1,11 @@
-package main;
+package main.test;
 
+import main.contact.ContType;
+import main.contact.Contact;
+import main.firm.Firm;
+import main.firm.FirmFactory;
+import main.subfirm.SubFirm;
+import main.subfirm.SubFirmType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 class FirmTest {
-//    Firm firm = FirmFactory.create();
+    private FirmFactory factory;
     private Contact contact;
     private SubFirm subFirm;
     private Firm actualFirm;
@@ -35,7 +41,8 @@ class FirmTest {
         subFirm.setTpy(subFirmType);
         subFirm.getConts().add(contact);
 
-        actualFirm = new Firm();
+        factory = FirmFactory.getInstance();
+        actualFirm = factory.create();
         actualFirm.setName("name");
         actualFirm.setCountry("country");
         actualFirm.setRegion("region");
